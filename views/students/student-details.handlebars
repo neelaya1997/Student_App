@@ -1,0 +1,100 @@
+<div class="container mt-4">
+    <div class="dashboard">
+        <div class="grid-container">
+            <div class="profile grid-area">
+                <div class="img">
+                    {{#if std_detail.student_photo}}
+                    <a href="/student/edit-student/{{std_detail._id}}">
+                    <i class="fas fa-edit position-absolute"></i>
+                    </a>
+                    <img class="photo_detail card-img-top" src="{{trimString std_detail.student_photo.0.path}}" />
+                    {{else}}
+                    <img class="photo_detail card-img-top"
+                        src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" />
+                    {{/if}}
+                    <h3>{{std_detail.student_name}}</h3>
+                    <h5 class="online">Online</h5>
+                    <div class="button">
+                        <a href="/student/edit-student/{{std_detail._id}}"><i class="fas fa-sliders-h"></i></a>
+                    </div>
+                </div>
+                <div class="profile-data">
+                    <div class="data-details">
+                        <h5>Location</h5>
+                        <h6>{{std_detail.student_location}}</h6>
+                    </div>
+                    <div class="data-details">
+                        <h5>Gender</h5>
+                        <h6>{{std_detail.student_gender}}</h6>
+                    </div>
+                </div>
+                <div class="profile-more">
+                    <div class="btn-group">
+                        <form action="/student/student-delete/{{std_detail._id}}?_method=DELETE" method="POST">
+                            <input type="hidden" name="_method" value="DELETE">
+                            <button class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="last-view grid-area">
+                <ul class="list-group1">
+                    <li class="list-group-item1 mb-2">
+                        <span><i class="fab fa-accusoft"></i></span>
+                        <h6>Skills</h6>
+                        {{#each std_detail.student_skills}}
+                        <span class="badge badge-success">{{this}}</span>
+                        {{/each}}
+                    </li>
+                    <li class="list-group-item1 mb-2">
+                        <span><i class="fas fa-envelope-open-text"></i></span>
+                        <h6>Email</h6>
+                        <span>{{std_detail.student_email}}</span>
+                    </li>
+                    <li class="list-group-item1 mb-2">
+                        <span><i class="fa fa-phone" aria-hidden="true"></i></span>
+                        <h6>Phone Number</h6>
+                        {{std_detail.student_phone}}
+                    </li>
+                    <li class="list-group-item1 mb-2">
+                        <span><i class="fas fa-graduation-cap"></i></span>
+                        <h6>Education</h6>
+                        <span>{{std_detail.student_education}}</span>
+                    </li>
+                    <li class="list-group-item1 mb-2">
+                        <span><i class="fas fa-user-graduate"></i></span>
+                        <h6>Percentage</h6>
+                        <span>
+                            {{std_detail.student_percentage }} %
+                        </span>
+                    </li>
+                    <li class="list-group-item1 mb-2">
+                        <span><i class="fas fa-birthday-cake"></i></span>
+                        <h6>Date Of Birth</h6>
+                        <span>{{std_detail.student_dob}}</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="last-like grid-area">
+                <h2>Related Students !</h2>
+                <div class="profiles-display">
+                    <div class="one-profile online">
+                        <div class="img">
+
+                            <img
+                                src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80">
+                        </div>
+                        <h4>Lea</h4>
+                    </div>
+                    <div class="one-profile">
+                        <div class="img">
+                            <img
+                                src="https://images.unsplash.com/photo-1463453091185-61582044d556?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80">
+                        </div>
+                        <h4>Christopher</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

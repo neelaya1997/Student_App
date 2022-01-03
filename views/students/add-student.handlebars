@@ -1,0 +1,87 @@
+<section id="add-Student">
+    <article class="container">
+        <div class="row">
+            <div class="col-md-3 left">
+                <h3 class="h3 font-weight-bold text-justify"><i class="fa fa-user-plus"></i> Add Student</h3>
+            </div>
+            <div class="col-md-9 right">
+
+                <form action="/student/add-student" method="post" enctype="multipart/form-data">
+                    <div class="row">
+                        <div class="col-md-4 photo_block">
+                            <label for="student_photo">Student Photo</label>
+                            <input type="file" name="student_photo" class="form-control my-2 hide_file">
+                        </div>
+
+                        <div class="col-md-4">
+                            <label for="id">Student id</label>
+                            <input type="text" name="student_id" class="form-control my-2" required>
+                        </div>
+
+                        <div class="col-md-4">
+                            <label for="student_name">Student name</label>
+                            <input type="text" name="student_name" class="form-control my-2" required>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="student_location">Location</label>
+                            <input type="text" name="student_location" class="form-control my-2" required>
+                        </div>
+
+                        <div class="col-md-4">
+                            <label for="student_dob">Date of birth</label>
+                            <input type="date" name="student_dob" class="form-control my-2" required>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="student_education">Highest Education</label>
+                            <input type="text" name="student_education" class="form-control my-2" required>
+                        </div>
+
+                        <div class="col-md-4  form-check">
+                            <label for="student_skills">Skills</label>
+                            <br />
+                            <span><input type="checkbox" class="form-check-input1" name="student_skills"
+                                    value="Java"><label>Java</label></span>
+                            <span><input type="checkbox" class="form-check-input1" name="student_skills"
+                                    value="python"><label>python</label></span>
+                            <span><input type="checkbox" class="form-check-input1" name="student_skills"
+                                    value="nodejs"><label>nodejs</label></span>
+                            <span><input type="checkbox" class="form-check-input1" name="student_skills"
+                                    value="javascript"><label>javascript</label></span>
+                            <span><input type="checkbox" class="form-check-input1" name="student_skills"
+                                    value="expressjs"><label>expressjs</label></span>
+                        </div>
+
+                        <div class="col-md-4">
+                            <label for="student_email">Email</label>
+                            <input type="text" name="student_email" class="form-control my-2" required>
+                        </div>
+
+                        <div class="col-md-4">
+                            <label for="student_gender">Gender</label>
+                            <br>
+                            <input type="radio" name="student_gender" class="form-control1 my-2" value="male"> Male
+                            <input type="radio" name="student_gender" class="form-control1 my-2" value="female"> Female
+                        </div>
+
+                        <div class="col-md-4">
+                            <label for="student_phone">Phone number</label>
+                            <input type="text" name="student_phone" class="form-control my-2" required>
+                        </div>
+
+                        <div class="col-md-4">
+                            <label for="student_percentage">Percentage Throughout</label>
+                            <input type="text" name="student_percentage" class="form-control my-2" required>
+                        </div>
+
+                        <div class="col-md-12">
+                            <button class="btn btn-success float-right">Add Student</button>
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </article>
+
+</section>

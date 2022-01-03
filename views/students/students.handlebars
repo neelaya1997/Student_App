@@ -1,0 +1,53 @@
+<section>
+    <article class="container student_table">
+        <table class="table table-bordered table-responsive my-4">
+            <thead>
+                <tr>
+                    <th>Student Photo</th>
+                    <th>Student Name</th>
+                    <th>Gender</th>
+                    <th>DOB</th>
+                    <th>Location</th>
+                    <th>Email</th>
+                    <th>Phonenumber</th>
+                    <th>Education</th>
+                    <th>Percentage</th>
+                    <th>Skills</th>
+                    <th>Details</th>
+
+                </tr>
+            </thead>
+
+            {{#each student}}
+            <tbody>
+                <tr>
+                    {{#if this.student_photo}}
+                    <td><img src="{{trimString student_photo.0.path}}" /></td>
+                    {{else}}
+                    <td>
+                        <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" />
+                    </td>
+                    {{/if}}
+                    <td>{{student_name}}</td>
+                    <td>{{student_gender}}</td>
+                    <td>{{student_dob}}</td>
+                    <td>{{student_location}}</td>
+                    <td>{{student_email}}</td>
+                    <td>{{student_phone}}</td>
+                    <td>{{student_education}}</td>
+                    <td>{{student_percentage}}</td>
+                    <td>
+                        {{#each student_skills}}
+                        <span class="badge badge-success">{{this}}</span>
+                        {{/each}}
+                    </td>
+                    <td><a href="/student/student_details/{{_id}}" class="btn btn-primary btn-sm">Details</a></td>
+                </tr>
+            </tbody>
+
+            {{else}}
+            <h1>No students profile here</h1>
+            {{/each}}
+        </table>
+    </article>
+</section>
